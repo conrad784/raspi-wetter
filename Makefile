@@ -4,7 +4,7 @@ WETTER := ~$(WETTER_USER)/.local/bin/getWetter.sh
 WETTER_SERVICE := ~$(WETTER_USER)/.config/systemd/user/getWetter@.service
 WETTER_TIMER := ~$(WETTER_USER)/.config/systemd/user/getWetter.timer
 WETTER_AUTOSTART := ~$(WETTER_USER)/.config/lxsession/LXDE-pi/autostart
-WETTER_HTML := /tmp/index.html
+WETTER_HTML := ~$(WETTER_USER)/.local/index.html
 
 .PHONY: install update clean
 
@@ -23,7 +23,8 @@ update:
 	if which systemctl; then \
 		install -m 0655 -D config/systemd/user/getWetter@.service $(WETTER_SERVICE); \
 		install -m 0655 -D config/systemd/user/getWetter.timer $(WETTER_TIMER); \
-		sed -i "s/conrad/pi/g" $(WETTER_SERVICE); \
+		sed -i s/$(WETTER_USER)/pi/g $(WETTER_SERVICE); \
+		sed -i s/$(WETTER_USER)/pi/g $(WETTER_AUTOSTART); \
 	fi
 
 clean:
