@@ -1,0 +1,11 @@
+[Unit]
+Description=run getWetter %I
+After=network-online.target
+
+[Service]
+ExecStart=/home/pi/.local/bin/getWetter.sh %i
+Type=forking
+
+[Install]
+WantedBy=multi-user.target
+
