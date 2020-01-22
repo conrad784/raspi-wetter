@@ -26,6 +26,7 @@ update:
 		install -m 0655 -D config/systemd/user/getWetter.timer $(WETTER_TIMER); \
 		sed -i s/$(WETTER_USER)/pi/g $(WETTER_SERVICE); \
 		sed -i s/$(WETTER_USER)/pi/g $(WETTER_AUTOSTART); \
+		systemctl --user daemon-reload; \
 	fi
 
 clean:
