@@ -24,8 +24,8 @@ update:
 	install -m 0644 index.html $(WETTER_HTML)
 	install -m 0644 -D config/lxsession/LXDE-pi/autostart $(WETTER_AUTOSTART)
 	if which systemctl; then \
-		install -m 0655 -D config/systemd/user/getWetter@.service $(WETTER_SERVICE); \
-		install -m 0655 -D config/systemd/user/getWetter.timer $(WETTER_TIMER); \
+		install -m 0644 -D config/systemd/user/getWetter@.service $(WETTER_SERVICE); \
+		install -m 0644 -D config/systemd/user/getWetter.timer $(WETTER_TIMER); \
 		sed -i s/$(WETTER_USER)/pi/g $(WETTER_SERVICE); \
 		sed -i s/$(WETTER_USER)/pi/g $(WETTER_AUTOSTART); \
 		systemctl --user daemon-reload; \
