@@ -7,5 +7,4 @@ else
 fi
 
 echo "Getting info for $CITY"
-wget -q -O /tmp/pic.png wttr.in/$CITY.png
-
+wget -q -O /tmp/pic.png wttr.in/${CITY}_1nq.png
