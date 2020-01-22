@@ -20,7 +20,7 @@ install: update
 
 update:
 	install -m 0755 -D getWetter.sh $(WETTER)
-	install -m 0755 -D clean_unsafe_shutdown $(WETTER)
+	install -m 0755 -D clean_unsafe_shutdown $(CLEANER)
 	install -m 0644 index.html $(WETTER_HTML)
 	install -m 0644 -D config/lxsession/LXDE-pi/autostart $(WETTER_AUTOSTART)
 	if which systemctl; then \
