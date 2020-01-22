@@ -14,6 +14,7 @@ install: update
 	else \
 		echo "Systemd not found, install service yourself and reboot for autostart"; \
 	fi
+	sudo apt-get install -y chromium-browser
 	echo "\n #### Please reboot your system for the effect of the autostart script ####"; 
 
 update:
