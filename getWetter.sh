@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ -z "$1" ]; then
-    CITY="Heideberg"
+    CITY="Heidelberg"
 else
     CITY=$1
 fi
