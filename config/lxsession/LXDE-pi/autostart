@@ -1,5 +1,7 @@
+# with @ automatically restarted
 @lxpanel --profile LXDE-pi
 @pcmanfm --desktop --profile LXDE-pi
+/home/pi/.local/bin/clean_unsafe_shutdown
 @chromium-browser --kiosk --disable-infobars /home/pi/.local/index.html
 @xscreensaver -no-splash
 point-rpi
